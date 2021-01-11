@@ -51,6 +51,8 @@ public class ChatsFragment extends Fragment {
         UserModelAdapter adapter = new UserModelAdapter(list,getContext());
         mBinding.userRecyclerViewId.setAdapter(adapter);
 
+        mDatabase = FirebaseDatabase.getInstance();
+
         //Create layoutManager And Set Layout....................................................
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         mBinding.userRecyclerViewId.setLayoutManager(linearLayoutManager);
@@ -61,7 +63,7 @@ public class ChatsFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //.............OK..................
                 list.clear();
-                
+
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
                     Users users = dataSnapshot.getValue(Users.class);
                     users.getUserId(dataSnapshot.getKey());

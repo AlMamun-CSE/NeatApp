@@ -123,11 +123,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         Log.d(TAG, "onStart: started.");
         // Check if user is signed in (non-null) and update UI accordingly..............
 
-        if (mAuth.getCurrentUser() != null){
-            Intent mainIntent = new Intent(SignInActivity.this,MainActivity.class);
-            startActivity(mainIntent);
-            finish();
-        }
+//        if (mAuth.getCurrentUser() != null){
+//            Intent mainIntent = new Intent(SignInActivity.this,MainActivity.class);
+//            startActivity(mainIntent);
+//            finish();
+//        }
     }
     // [END on_start_check_user]............................
 
